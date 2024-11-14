@@ -2,7 +2,7 @@
 name = "clinicaio"
 version = "0.1.0"
 description = ""
-authors = ["NicolasGensollen <nicolas.gensollen@gmail.com>"]
+authors = ["ARAMIS Lab"]
 readme = "README.md"
 packages = [{include = "clinicaio", from = "src"}]
 
