@@ -13,6 +13,10 @@ repos:
     rev: v2.3.0
     hooks:
       - id: codespell
+        exclude: >
+            (?x)^(
+                .*\.lock
+            )$
         additional_dependencies:
           - tomli
   - repo: https://github.com/python-poetry/poetry
