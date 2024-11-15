@@ -6,9 +6,8 @@ import numpy as np
 from scipy.io import savemat
 
 from clinicaio.utils.bids_entities import SessionEntity, SubjectEntity
-from clinicaio.utils.caps import Resolution, Space, Extension, Suffix
-from clinicaio.utils.pet import Tracer, SUVRReferenceRegion
-
+from clinicaio.utils.caps import Extension, Resolution, Space, Suffix
+from clinicaio.utils.pet import SUVRReferenceRegion, Tracer
 
 from .filename import get_caps_filename
 
@@ -17,8 +16,8 @@ def build_pet_linear(
     root: Union[str, Path],
     subject: int,
     session: int,
-    tracer: str,
-    suvr_ref_region: str,
+    tracer: str = Tracer.FDG,
+    suvr_ref_region: str = SUVRReferenceRegion.PONS,
     crop: bool = True,
     save_pet_in_t1w_space: bool = False,
 ):

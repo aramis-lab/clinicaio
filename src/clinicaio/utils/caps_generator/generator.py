@@ -1,11 +1,13 @@
 import shutil
-from typing import Union, List
 from pathlib import Path
+from typing import List, Union
+
+from clinicaio.utils.bids_entities import SessionEntity, SubjectEntity
 from clinicaio.utils.caps import Pipeline
-from .t1_linear import build_t1_linear
-from .pet_linear import build_pet_linear
+
 from .flair_linear import build_flair_linear
-from clinicaio.utils.bids_entities import SubjectEntity, SessionEntity
+from .pet_linear import build_pet_linear
+from .t1_linear import build_t1_linear
 
 
 class CAPSGenerator:
@@ -99,6 +101,9 @@ class CAPSGenerator:
             raise ValueError(f"pipeline {pipeline} is not yet implemented.")
 
         full_dir = (
-            self.dir / SubjectEntity(subject) / SessionEntity(session) / directory
+            self.dir / "subjects" / SubjectEntity(subject) / SessionEntity(session) / directory
         )
-        shutil.rmtree(full_dir)
+        try:
+            shutil.rmtree(full_dir)
+        except FileNotFoundError:   # there is not such subject/session for this pipeline
+            pass

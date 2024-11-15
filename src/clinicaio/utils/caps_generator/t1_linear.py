@@ -6,7 +6,7 @@ import numpy as np
 from scipy.io import savemat
 
 from clinicaio.utils.bids_entities import SessionEntity, SubjectEntity
-from clinicaio.utils.caps import Resolution, Space, Extension, Suffix
+from clinicaio.utils.caps import Extension, Resolution, Space, Suffix
 
 from .filename import get_caps_filename
 
