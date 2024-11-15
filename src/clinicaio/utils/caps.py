@@ -4,10 +4,32 @@ from enum import Enum
 class Pipeline(str, Enum):
     """Preprocessing pipelines that can be found in CAPS."""
 
-    CUSTOM = "custom"
     T1_LINEAR = "t1-linear"
     FLAIR_LINEAR = "flair-linear"
     PET_LINEAR = "pet-linear"
+
+
+class Extension(str, Enum):
+    """Possible extensions in BIDS file names."""
+
+    NIIGZ = ".nii.gz"
+    NII = ".nii"
+    JSON = ".json"
+    TSV = ".tsv"
+    MAT = ".mat"
+    BVAL = ".bval"
+    BVEC = ".bvec"
+
+
+class Suffix(str, Enum):
+    """Possible suffixes in CAPS file names."""
+
+    DWI = "dwi"
+    PET = "pet"
+    T1W = "T1w"
+    FLAIR = "FLAIR"
+    AFFINE = "affine"
+    RIGID = "rigid"
 
 
 class Space(str, Enum):
