@@ -1,6 +1,6 @@
 from typing import Optional
 from pathlib import Path
-from .bids_entities import (
+from clinicaio.utils.bids_entities import (
     SubjectEntity,
     SessionEntity,
     TracerEntity,
@@ -9,8 +9,7 @@ from .bids_entities import (
     ResolutionEntity,
     SUVREntity,
 )
-from .bids import Suffix, Extension
-from .caps import Description
+from clinicaio.utils.caps import Description, Suffix, Extension
 
 
 def get_caps_filename(
@@ -24,6 +23,7 @@ def get_caps_filename(
     resolution: Optional[str] = None,
     suvr_ref_region: Optional[str] = None,
 ) -> Path:
+    """Returns a BIDS-compliant filename from entity values, a suffix and a extension."""
     entities_list = []
     for entity in [  # order matters
         SubjectEntity(subject),
