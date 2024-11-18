@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Optional
 
-from clinicaio.utils.bids_entities import (
+from clinicaio.models.bids_entities import (
     DescriptionEntity,
     ResolutionEntity,
     SessionEntity,
@@ -10,10 +10,10 @@ from clinicaio.utils.bids_entities import (
     SUVREntity,
     TracerEntity,
 )
-from clinicaio.utils.caps import Description, Extension, Suffix
+from clinicaio.models.caps import Description, Extension, Suffix
 
 
-def get_caps_filename(
+def _get_caps_filename(
     subject: int,
     session: int,
     suffix: str,

@@ -1,7 +1,7 @@
 import shutil
 from pathlib import Path
 
-from clinicaio.utils.caps_generator.pet_linear import build_pet_linear
+from clinicaio.generators.caps.pet_linear import _build_pet_linear
 
 
 def test_build_pet_linear():
@@ -11,7 +11,7 @@ def test_build_pet_linear():
     if test_dir.exists():
         shutil.rmtree(test_dir)
 
-    build_pet_linear(
+    _build_pet_linear(
         root=test_dir,
         subject=2,
         session=3,
@@ -32,7 +32,7 @@ def test_build_pet_linear():
 
     shutil.rmtree(test_dir)
 
-    build_pet_linear(
+    _build_pet_linear(
         root=test_dir,
         subject=2,
         session=3,

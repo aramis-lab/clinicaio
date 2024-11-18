@@ -5,17 +5,17 @@ import nibabel as nib
 import numpy as np
 from scipy.io import savemat
 
-from clinicaio.utils.bids_entities import SessionEntity, SubjectEntity
-from clinicaio.utils.caps import Extension, Resolution, Space, Suffix
+from clinicaio.models.bids_entities import SessionEntity, SubjectEntity
+from clinicaio.models.caps import Extension, Resolution, Space, Suffix
 
-from .filename import get_caps_filename
+from .filename import _get_caps_filename
 
 
-def build_t1_linear(
+def _build_flair_linear(
     root: Union[str, Path], subject: int, session: int, crop: bool = True
 ):
     """
-    Simulates t1-linear by creating fake output files in `root`.
+    Simulates flair-linear by creating fake output files in `root`.
     """
     dummy_nifti_img = nib.Nifti1Image(np.ones((1, 1, 1)).astype(np.int8), np.eye(4))
     dummy_mat = {
@@ -30,21 +30,21 @@ def build_t1_linear(
         / "subjects"
         / SubjectEntity(subject)
         / SessionEntity(session)
-        / "t1_linear"
+        / "flair_linear"
     )
     directory.mkdir(parents=True, exist_ok=True)
 
-    uncropped_file = directory / get_caps_filename(
+    uncropped_file = directory / _get_caps_filename(
         subject,
         session,
         space=space,
         resolution=resolution,
-        suffix=Suffix.T1W,
+        suffix=Suffix.FLAIR,
         extension=Extension.NIIGZ,
     )
     nib.save(dummy_nifti_img, uncropped_file)
 
-    mat_file = directory / get_caps_filename(
+    mat_file = directory / _get_caps_filename(
         subject,
         session,
         space=space,
@@ -55,13 +55,13 @@ def build_t1_linear(
     savemat(mat_file, dummy_mat)
 
     if crop:
-        cropped_file = directory / get_caps_filename(
+        cropped_file = directory / _get_caps_filename(
             subject,
             session,
             space=space,
             crop=True,
             resolution=resolution,
-            suffix=Suffix.T1W,
+            suffix=Suffix.FLAIR,
             extension=Extension.NIIGZ,
         )
         nib.save(dummy_nifti_img, cropped_file)

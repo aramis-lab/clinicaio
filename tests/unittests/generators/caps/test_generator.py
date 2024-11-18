@@ -1,7 +1,7 @@
 import shutil
 from pathlib import Path
 
-from clinicaio.utils.caps_generator.generator import CAPSGenerator
+from clinicaio.generators.caps.generator import CAPSGenerator
 
 
 def test_caps_generator():

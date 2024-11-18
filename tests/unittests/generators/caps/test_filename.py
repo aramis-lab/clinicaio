@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from clinicaio.utils.caps_generator.filename import get_caps_filename
+from clinicaio.generators.caps.filename import _get_caps_filename
 
 
 @pytest.mark.parametrize(
@@ -38,6 +38,6 @@ from clinicaio.utils.caps_generator.filename import get_caps_filename
     ],
 )
 def test_get_caps_filename(args, expected_output):
-    filename = get_caps_filename(**args)
+    filename = _get_caps_filename(**args)
     assert isinstance(filename, Path)
     assert str(filename) == expected_output

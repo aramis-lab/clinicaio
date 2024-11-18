@@ -5,14 +5,14 @@ import nibabel as nib
 import numpy as np
 from scipy.io import savemat
 
-from clinicaio.utils.bids_entities import SessionEntity, SubjectEntity
-from clinicaio.utils.caps import Extension, Resolution, Space, Suffix
-from clinicaio.utils.pet import SUVRReferenceRegion, Tracer
+from clinicaio.models.bids_entities import SessionEntity, SubjectEntity
+from clinicaio.models.caps import Extension, Resolution, Space, Suffix
+from clinicaio.models.pet import SUVRReferenceRegion, Tracer
 
-from .filename import get_caps_filename
+from .filename import _get_caps_filename
 
 
-def build_pet_linear(
+def _build_pet_linear(
     root: Union[str, Path],
     subject: int,
     session: int,
@@ -42,7 +42,7 @@ def build_pet_linear(
     )
     directory.mkdir(parents=True, exist_ok=True)
 
-    uncropped_file = directory / get_caps_filename(
+    uncropped_file = directory / _get_caps_filename(
         subject,
         session,
         tracer=trc,
@@ -55,7 +55,7 @@ def build_pet_linear(
     )
     nib.save(dummy_nifti_img, uncropped_file)
 
-    mat_file = directory / get_caps_filename(
+    mat_file = directory / _get_caps_filename(
         subject,
         session,
         tracer=trc,
@@ -66,7 +66,7 @@ def build_pet_linear(
     savemat(mat_file, dummy_mat)
 
     if crop:
-        cropped_file = directory / get_caps_filename(
+        cropped_file = directory / _get_caps_filename(
             subject,
             session,
             tracer=trc,
@@ -80,7 +80,7 @@ def build_pet_linear(
         nib.save(dummy_nifti_img, cropped_file)
 
     if save_pet_in_t1w_space:
-        nifti_file = directory / get_caps_filename(
+        nifti_file = directory / _get_caps_filename(
             subject,
             session,
             tracer=trc,
