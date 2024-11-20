@@ -3,13 +3,13 @@
 from collections import UserString
 from typing import Union, Optional
 from pathlib import Path 
-from .enum import SUVRReferenceRegions, Tracer, 
+from .enum import SUVRReferenceRegions, Tracer
 from enum import Enum
 # questions: dependance à Pydantic ??
 
 
 class Label(UserString):
-    def __init__(self, value: str):
+    def __init__(self, value: Union[str, Enum]):
         super().__init__(self.validate(value))
 
     @classmethod
@@ -234,7 +234,7 @@ class BIDSPath(Base):
     def get_image(self):
         path_ = Path(str(self.subject)) / str(self.session) / str(self.modality)
 
-        filename = path_
+        filename = str(path_)
 
         for entity in self.entities:
             filename += "_" + str(entity)
