@@ -1,0 +1,9 @@
+modality	run_num	bids_filename	manufacturer	number_of_parts	
+dwi	run-01	sub-002_ses-M070_run-01_dwi	SIEMENS	2.0
+dwi	run-02	sub-002_ses-M070_run-02_dwi	SIEMENS	2.0
+T2w	run-02	sub-002_ses-M070_run-02_T2w	SIEMENS	1
+T2w	run-01	sub-002_ses-M070_run-01_T2w	SIEMENS	1
+T1	run-01	sub-002_ses-M070_run-01_T1w	SIEMENS	1
+rsfmri	run-01	sub-002_ses-M070_task-rest_run-01_bold	SIEMENS	1
+fieldmap	run-01	sub-002_ses-M070_run-01_magnitude	SIEMENS	1
+fieldmap	run-01	sub-002_ses-M070_run-01_phasediff	SIEMENS	1

@@ -1,0 +1,6 @@
+modality	run_num	bids_filename	manufacturer	number_of_parts	
+T1	run-01	sub-004_ses-M000_run-01_T1w	Philips Medical Systems	1
+rsfmri	run-01	sub-004_ses-M000_task-rest_run-01_bold	Philips Medical Systems	1
+T1	run-02	sub-004_ses-M000_run-02_T1w	Philips Medical Systems	1
+rsfmri	run-02	sub-004_ses-M000_task-rest_run-02_bold	Philips Medical Systems	1
+dwi	run-01	sub-004_ses-M000_run-01_dwi	Philips Medical Systems	1.0
