@@ -1,0 +1,4 @@
+	filename	scan_id	mri_field	acq_time
+0	anat/sub-001_ses-M000_T1w.nii.gz	34316	1.5	2005-12-09
+1	pet/sub-001_ses-M000_trc-18FFDG_rec-coregavg_pet.nii.gz	26939		
+2	pet/sub-001_ses-M000_trc-18FFDG_rec-coregiso_pet.nii.gz	26939		

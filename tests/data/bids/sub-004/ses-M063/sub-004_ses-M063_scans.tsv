@@ -1,0 +1,6 @@
+modality	run_num	bids_filename	manufacturer	number_of_parts	
+T2w	run-02	sub-004_ses-M063_run-02_T2w	GE MEDICAL SYSTEMS	1
+dwi	run-01	sub-004_ses-M063_run-01_dwi	GE MEDICAL SYSTEMS	2.0
+T2w	run-01	sub-004_ses-M063_run-01_T2w	GE MEDICAL SYSTEMS	1
+dwi	run-02	sub-004_ses-M063_run-02_dwi	GE MEDICAL SYSTEMS	2.0
+T1	run-01	sub-004_ses-M063_run-01_T1w	GE MEDICAL SYSTEMS	1

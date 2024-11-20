@@ -1,0 +1,13 @@
+modality	run_num	bids_filename	manufacturer	number_of_parts	
+dwi	run-02	sub-004_ses-M017_run-02_dwi	Philips Medical Systems	9.0
+dwi	run-07	sub-004_ses-M017_run-07_dwi	Philips Medical Systems	9.0
+dwi	run-04	sub-004_ses-M017_run-04_dwi	Philips Medical Systems	9.0
+T2w	run-01	sub-004_ses-M017_run-01_T2w	Philips Medical Systems	1
+rsfmri	run-01	sub-004_ses-M017_task-rest_run-01_bold	Philips Medical Systems	1
+dwi	run-06	sub-004_ses-M017_run-06_dwi	Philips Medical Systems	9.0
+dwi	run-05	sub-004_ses-M017_run-05_dwi	Philips Medical Systems	9.0
+dwi	run-09	sub-004_ses-M017_run-09_dwi	Philips Medical Systems	9.0
+dwi	run-08	sub-004_ses-M017_run-08_dwi	Philips Medical Systems	9.0
+dwi	run-01	sub-004_ses-M017_run-01_dwi	Philips Medical Systems	9.0
+T1	run-01	sub-004_ses-M017_run-01_T1w	Philips Medical Systems	1
+dwi	run-03	sub-004_ses-M017_run-03_dwi	Philips Medical Systems	9.0

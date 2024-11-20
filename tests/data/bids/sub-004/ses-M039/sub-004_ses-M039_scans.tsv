@@ -1,0 +1,8 @@
+modality	run_num	bids_filename	manufacturer	number_of_parts	
+dwi	run-02	sub-004_ses-M039_run-02_dwi	Philips Medical Systems	5.0
+T2w	run-01	sub-004_ses-M039_run-01_T2w	Philips Medical Systems	1
+dwi	run-01	sub-004_ses-M039_run-01_dwi	Philips Medical Systems	5.0
+dwi	run-05	sub-004_ses-M039_run-05_dwi	Philips Medical Systems	5.0
+T1	run-01	sub-004_ses-M039_run-01_T1w	Philips Medical Systems	1
+dwi	run-04	sub-004_ses-M039_run-04_dwi	Philips Medical Systems	5.0
+dwi	run-03	sub-004_ses-M039_run-03_dwi	Philips Medical Systems	5.0

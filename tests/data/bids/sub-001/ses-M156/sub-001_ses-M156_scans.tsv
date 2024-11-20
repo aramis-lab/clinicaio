@@ -1,0 +1,11 @@
+	filename	scan_id	mri_field	acq_time
+0	dwi/sub-001_ses-M156_dwi.json	1120329		
+1	dwi/sub-001_ses-M156_dwi.nii.gz	1120329		
+2	dwi/sub-001_ses-M156_dwi.bval	1120329		
+3	dwi/sub-001_ses-M156_dwi.bvec	1120329		
+4	anat/sub-001_ses-M156_FLAIR.nii.gz	1120322	3.0	
+5	anat/sub-001_ses-M156_FLAIR.json	1120322	3.0	
+6	anat/sub-001_ses-M156_T1w.nii.gz	1120324	3.0	2019-01-24
+7	pet/sub-001_ses-M156_trc-18FAV45_pet.nii.gz	1121997		
+8	func/sub-001_ses-M156_task-rest_bold.json	1120325		
+9	func/sub-001_ses-M156_task-rest_bold.nii.gz	1120325		
