@@ -5,7 +5,7 @@ from typing import Union, Optional
 from pathlib import Path 
 from .enum import SUVRReferenceRegions, Tracer, AnatMRISuffix, PETSuffix, FMapSuffix, Modality, Extension
 from enum import Enum
-
+from dataclasses import dataclass
 # questions: dependance à Pydantic ??
 
 
@@ -181,6 +181,9 @@ class RunEntity(Entity):
         self.value = Index(value) 
 
 
+class SuffixEntity(Label):
+    pass
+
 # CAPS Entities
 
 class SUVREntity(Entity):
@@ -188,21 +191,25 @@ class SUVREntity(Entity):
     def __init__(self, value: str):
         self.value = Label(SUVRReferenceRegions(value))
 
- 
+
+@dataclass
 class BIDSPath:
     subject: SubjectEntity
     session: SessionEntity
     modality: Modality
     entities: Optional[list[Entity]]
+    suffix: Optional[SuffixEntity] # is suffix optional ? 
     extension: Optional[Extension]
 
-
-    def get_image(self):
+    def get_image(self) -> Path:
         path_ = Path(str(self.subject)) / str(self.session) / str(self.modality)
 
-        filename = str(path_)
+        filename = str(self.subject) + "_" + str(self.session) 
 
         for entity in self.entities:
             filename += "_" + str(entity)
         
+        filename += f".{(str(self.suffix) if self.suffix else '')}"
         filename += f".{(str(self.extension) if self.extension else '')}"
+
+        return path_ / filename
