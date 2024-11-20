@@ -1,5 +1,5 @@
-participant_id
-sub-001
-sub-002
-sub-003
-sub-004
+participant_id	age	sex	handedness
+sub-001	20	m	l
+sub-002	30	M	RIGHT
+sub-003	40,9	Female	Ambidextrous
+sub-004	50,3	other	right
