@@ -3,8 +3,9 @@
 from collections import UserString
 from typing import Union, Optional
 from pathlib import Path 
-from .enum import SUVRReferenceRegions, Tracer
+from .enum import SUVRReferenceRegions, Tracer, AnatMRISuffix, PETSuffix, FMapSuffix, Modality, Extension
 from enum import Enum
+
 # questions: dependance à Pydantic ??
 
 
@@ -180,21 +181,6 @@ class RunEntity(Entity):
         self.value = Index(value) 
 
 
-class AnatMRISuffix(str, Enum):
-    FLAIR = "FLAIR"
-    T1W = "T1w"
-    T2W = "T2w"
-    
-
-class PETSuffix(str, Enum):
-    PET = "pet"
-
-class DWISuffix(str, Enum):
-    DWI = "dwi"
-
-class FMapSuffix(str, Enum):
-    
-
 # CAPS Entities
 
 class SUVREntity(Entity):
@@ -202,34 +188,14 @@ class SUVREntity(Entity):
     def __init__(self, value: str):
         self.value = Label(SUVRReferenceRegions(value))
 
-
-#
-class Modality(str, Enum):
-    T1 = "T1W"
-
-class Extension(str, Enum):
-    NIFTI = ".nii"
-    NIFTI_GZ = ".nii.gz"
-    DICOM = ".dcm"
-    PT = ".pt"
-
  
-class BIDSPath(Base):
+class BIDSPath:
     subject: SubjectEntity
     session: SessionEntity
     modality: Modality
     entities: Optional[list[Entity]]
     extension: Optional[Extension]
 
-    
-    def __init__(self, subject, session, modality, entities, extension):
-        self.subject = subject
-        self.session = session
-        self.modality = modality
-        self.entities = entities
-        self.extension = extension
-        
-        
 
     def get_image(self):
         path_ = Path(str(self.subject)) / str(self.session) / str(self.modality)

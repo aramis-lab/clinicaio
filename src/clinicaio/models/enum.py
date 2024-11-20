@@ -18,5 +18,27 @@ class Tracer(str, Enum):
     FAV45 = "18FAV45"
     CPIB = "11CPIB"
 
-class Suffix(str, Enum):
-    PT
+class AnatMRISuffix(str, Enum):
+    FLAIR = "FLAIR"
+    T1W = "T1w"
+    T2W = "T2w"
+    
+
+class PETSuffix(str, Enum):
+    PET = "pet"
+
+class DWISuffix(str, Enum):
+    DWI = "dwi"
+
+class FMapSuffix(str, Enum):
+    pass
+
+class Modality(str, Enum):
+    pass
+
+
+class Extension(str, Enum):
+    NIFTI = ".nii"
+    NIFTI_GZ = ".nii.gz"
+    DICOM = ".dcm"
+    PT = ".pt"
