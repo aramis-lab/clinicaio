@@ -1,6 +1,6 @@
 # ClinicaIO documentation
 
-This is the documentation for ClinicaIO, a Python library for input/output management of all Clinica projects.
+This is the documentation for ClinicaIO, a Python library to read, write and query from BIDS neuroimaging datasets.
 
 ```{toctree}
 :caption: Reference

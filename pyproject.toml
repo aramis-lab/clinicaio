@@ -1,7 +1,7 @@
 [project]
 name = "clinicaio"
 version = "1.0.0"
-description = "A Python library for input/output management of all Clinica projects."
+description = "Read, write and query from BIDS neuroimaging datasets"
 license = "MIT"
 authors = [
     { name = "ARAMIS Lab" }
